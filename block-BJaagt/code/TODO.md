@@ -6,10 +6,10 @@ Example:
 function hello() {
   var username = 'Arya';
 }
-console.log(useranme); // output
+console.log(username); // username is not defined
 ```
 
-In above code we are looking for the variable named `usename`. There is no variable named `username` in the global scope. The variable is inside the function named `hello` and we can't access the variable defined inside a function from outside.
+In above code we are looking for the variable named `username`. There is no variable named `username` in the global scope. The variable is inside the function named `hello` and we can't access the variable defined inside a function from outside.
 
 The above code will throw an error `Reference Error username is not defined`.
 
@@ -19,7 +19,7 @@ The above code will throw an error `Reference Error username is not defined`.
 {
   const username = 'Arya';
 }
-console.log(useranme); // output
+console.log(username); // username is not defined
 ```
 
 3. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -28,7 +28,7 @@ console.log(useranme); // output
 if (true) {
   let username = 'Arya';
 }
-console.log(useranme); // output
+console.log(username); // username is not defined
 ```
 
 4. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -37,7 +37,7 @@ console.log(useranme); // output
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // output
+console.log(useranme); // Arya
 ```
 
 5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -47,7 +47,7 @@ let username = 'John';
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // output
+console.log(useranme); // 'username' has already been declared
 ```
 
 6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -57,7 +57,7 @@ let username = 'John';
 if (true) {
   let username = 'Arya';
 }
-console.log(useranme); // output
+console.log(useranme); // john
 ```
 
 7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -68,23 +68,25 @@ function sayHello() {
   let username = 'Arya';
 }
 sayHello();
-console.log(useranme); // output
+console.log(username); // John
 ```
 
 8. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
 for (var i = 0; i < 10; i++) {
-  console.log(i, 'First'); // output
+  console.log(i, 'First'); // printed 10 times 'First'
 }
-console.log(i, 'Second'); // output
+console.log(i, 'Second'); // second becoz console.log is outside of function.
 ```
 
 9. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
 for (let i = 0; i < 10; i++) {
-  console.log(i, 'First'); // output
+  console.log(i, 'First'); // printed 10 times 'First'
 }
-console.log(i, 'Second'); // output
+console.log(i, 'Second'); // i is not defined
 ```
+
+
