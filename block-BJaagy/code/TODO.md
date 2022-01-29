@@ -1,15 +1,20 @@
 1. Create a function by your choice that accepts a callback function.
 ```js
 function choice(n) {
-  return n / 2;
+  return n(10);
 }
+choice(function inner(num)
+{return num + 1});
 ```
 
 2. Create a function by you choice that returns a function reference.
 ```js
-function fullName(firstName, lastName) {
-  return `${firstName} ${lastName};
+function choice(n) {
+  function inner(num){return num + 1}
+  return inner;
 }
+choice();
+
 ```
 
 3. Create a higher order function called `map` that takes two inputs:
@@ -20,7 +25,7 @@ Have `map` return a new array filled with values that are the result of the 'cal
 
 ```js
 // Your code goes here
-let filter = [1,2,3,4,5];
+
 function map(arr,cb) {
   let finalArr = [];
   for(let elm of arr) {
@@ -43,12 +48,10 @@ multiplyByTwo(2); //-> 4
 ```js
 // Your code goes here
 
-function forEach(array, callback) {
-    var newArray = []
-  for (var i = 0; i < array.length; i++) {
-    newArray.push(callback(array[i]));
+function forEach(arr, cb) {
+   for(let elm of arr) {
+     (cb(elm))
   }
-  return newArray
 }
 
 // Test Your Code
@@ -64,10 +67,12 @@ console.log(alphabet); //prints 'abcd'
 
 ```js
 // Test Your Code
-function filter(array, callback) {
+function filter(arr, cb) {
   var newArray = []
-   for (var i = 0; i < array.length; i++) {
-    newArray.push(callback(array[i]));
+   for(let elm of arr) {
+    if(cb(elm)){
+      newArray.push(elm)
+    }
   }
   return newArray
 }
@@ -82,5 +87,6 @@ let odd = filter(numbers, function (n) {
 });
 console.log(odd); // [1,3,5,7,89]
 ```
+
 
 
