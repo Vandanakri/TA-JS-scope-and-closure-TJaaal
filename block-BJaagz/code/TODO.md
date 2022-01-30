@@ -26,7 +26,7 @@ forEach(['Sam', 'Jon', 'Arya'], (name, i, arr) =>
 function map(arr,cb) {
  return arr.reduce((acc,cv,i,arr) => {
 acc.push(cb(cv,i,arr))
-return acc
+return acc;
  },[])
   
 }
@@ -41,7 +41,7 @@ map(['Sam', 'Jon', 'Arya'], (name) => name + name); // ['SamSam', 'JonJon', 'Ary
 - It should work exactly like array `filter` method
 
 ```js
-function filter(acc,cb) {
+function filter(arr,cb) {
  return arr.reduce((acc,cv,i,arr) => {
 if(cb(cv,i,arr)){
   acc.push(cv)
@@ -54,3 +54,4 @@ filter(['Sam', 'Jon', 'Arya'], (name) =>
   name.startsWith('S')
 ); // ['Sam']
 ```
+
