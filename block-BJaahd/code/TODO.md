@@ -21,12 +21,12 @@ function getCounter() {
 
 let counter = getCounter()
 
-counter.value();  // output
-counter.increment(); // output
-counter.increment(); // output
-counter.value(); // output
-counter.decrement(); // output
-counter.value(); // output
+counter.value();  // 1
+counter.increment(); // undefined
+counter.increment(); // undefined
+counter.value(); // 3
+counter.decrement(); // undefined
+counter.value(); // 2
 ```
 
 2. Create the execution context diagram and write the output.
@@ -64,4 +64,6 @@ console.log(counter1.value()); // OUTPUT
 counter1.decrement();
 console.log(counter1.value()); // OUTPUT
 console.log(counter2.value()); // OUTPUT
+
+
 ```
