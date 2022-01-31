@@ -10,8 +10,12 @@
 **You can use normal for loop for this function**
 
 ```js
-function loop() {
+function loop(start,test,update,body) {
   // Your code goes here
+  for(let i = start; test(i); update(i)) {
+    body(i)
+  }
+
 
 }
 
@@ -32,7 +36,11 @@ Here's how it works. The function has an "accumulator value" which starts as the
 
 ```js
 function reduce(array, callback, initialValue) {
-  
+  let accumulator = initialValue;
+  for(i = 0; i < array.length; i++){
+    accumulator = callback(accumulator, array[i])
+  }
+  return accumulator;
 }
 
 // Test
@@ -46,7 +54,14 @@ reduce(nums, add, 0); //-> 8
 3. Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs.
 
 ```js
-function intersection(arrays) {}
+function intersection(...arrays) {
+  let first = arrays[0];
+  for (i = 1; i < array.length; i++) {
+    let second = arrays[i];
+    first = first.filter(elm => second.includes(elm))
+  }
+  return first;
+}
 
 // Test
 console.log(
@@ -61,7 +76,13 @@ console.log(
 4. Construct a function `union` that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array.
 
 ```js
-function union(arrays) {}
+function union(...arrays) {
+  let first = arrays[0]
+  for(let i = 1; i < array.length; i++) {
+    first = first.filter(elm => !second.includes(elm)).concat(second)
+  }
+  return first;
+}
 
 // Test
 console.log(
