@@ -51,7 +51,7 @@ isChild(103); // false
 ```js
 function letsWishThem(greeting) {
   return function(message){
-    
+    return`${greeting} ${message}`
   }
 }
 
@@ -64,13 +64,9 @@ callWithHello('How Are You?'); // Hello How Are You?
 5. Write a function called `addGame` which takes a string (name of the game) and the current score. It returns a function calling that will increment the score by one and print something like `Score of Basketball is 1`.
 
 ```js
-function addGame(gameName) {
-  let score = 1;
+function addGame(gameName,currentScore) {
   return function(){
-    return `Your score of Hockey  ${score++}`
-  },
-  return function(){
-    return `Your score of Cricket is ${score++}`
+    return `$Your score of${gameName} is ${++currentScore}`
   }
 }
 
@@ -86,9 +82,13 @@ cricket(); // Your score of Cricket is 2
 6. Write a function called `getCard` which takes one of these options (club, spade, heart, diamond) returns a function calling that function returns random card (2,3,4,5,6,7,8,9,10,J, Q, K, A) of that suit.
 
 ```js
-function getCard(club, spade, heart, diamond) {
+function getCard(suit) {
   return function(){
-
+   let values = [2,3,4,5,6,7,8,9,10,"J", "Q", "K", "A"]
+   function getRamdomNumber(){
+     return Math.floor(Math.random() * values.length);
+   }
+   return `Card is: ${values[getRandomNumber()]} ${suits}`;
   }
 }
 
@@ -100,4 +100,4 @@ const randomSpade = getCard('Spade');
 randomSpade(); // Card is: 6 Spade
 randomSpade(); // Card is: A Spade
 ```
-
+  
