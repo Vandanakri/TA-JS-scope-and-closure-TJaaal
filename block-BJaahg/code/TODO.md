@@ -10,9 +10,9 @@ const lastName = 'Stark';
 var knownAs = 'no one';
 
 console.log(
-  window.firstName,
-  window.lastName,
-  window.knownAs
+  window.firstName, // error
+  window.lastName, //error
+  window.knownAs  // 'no one'
 );
 ```
 
@@ -27,7 +27,7 @@ function fullName(a, b) {
   return a + b;
 }
 
-console.log(window.fullName(firstName, lastName));
+console.log(window.fullName(firstName, lastName)); // AryaStark
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
@@ -38,7 +38,7 @@ fucntion addOne(num){
 }
 var one = addOne(0);
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two); //1 2
 ```
 
 4. Make a Execution Context Diagram for the following JS and write the output.
@@ -49,7 +49,7 @@ fucntion addOne(num){
   return num + 1;
 }
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two); //1 2
 ```
 
 5. Make a Execution Context Diagram for the following JS and write the output.
@@ -60,7 +60,8 @@ fucntion addOne(num){
   return num + 1;
 }
 var two = addOne(1);
-console.log(two);
+console.log(two); // 1
+                  // 2
 ```
 
 6. Make a Execution Context Diagram for the following JS and write the output.
@@ -71,7 +72,7 @@ const addOne = (num) => {
   return num + 1;
 };
 var two = addOne(1);
-console.log(two);
+console.log(two); //addOne is not defiine
 ```
 
 7. Make a Execution Context Diagram for the following JS and write the output.
@@ -82,7 +83,7 @@ const addOne = (num) => {
   return num + 1;
 };
 var two = addOne(1);
-console.log(two);
+console.log(two); //addOne is not defiine
 ```
 
 8. What will be the output of the following
@@ -95,7 +96,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); // undefined
 ```
 
 9. What will be the output of the following
@@ -108,7 +109,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); //true
 ```
 
 10. What will be the output of the following
@@ -121,7 +122,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); //undefined
 ```
 
 11. What will be the output of the following
@@ -135,7 +136,7 @@ function fullName(a, b) {
   return a + b;
 }
 const name = fullName(firstName, lastName);
-console.log(name);
+console.log(name); // AryaStark
 ```
 
 12. Guess the output of the code below with a reason.
@@ -146,7 +147,7 @@ function sayHello() {
 }
 sayHello();
 
-console.log(name);
+console.log(name); // undefined because thre function is don't return anything.
 ```
 
 13. Guess the output of the code below with a reason.
@@ -155,7 +156,7 @@ console.log(name);
 if (true) {
   var name = 'Arya Stark';
 }
-console.log(name);
+console.log(name);//Arya Stark
 ```
 
 14. Guess the output of the code below with a reason.
@@ -164,14 +165,14 @@ console.log(name);
 if (true) {
   let name = 'Arya Stark';
 }
-console.log(name);
+console.log(name); // Arya Stark
 ```
 
 15. Guess the output of the code below with a reason.
 
 ```js
 for (var i = 0; i < 20; i++) {
-  //
+  // 20
 }
 console.log(i);
 ```
@@ -180,7 +181,7 @@ console.log(i);
 
 ```js
 for (let i = 0; i < 20; i++) {
-  //
+  // 20
 }
 console.log(i);
 ```
@@ -194,7 +195,7 @@ function sample() {
   }
   console.log(username);
 }
-sample();
+sample(); //John Snow
 ```
 
 18. Guess the output and the reason behind that.
@@ -206,7 +207,7 @@ function sample() {
   }
   console.log(username);
 }
-sample();
+sample(); // username is not defined.
 ```
 
 19. Guess the output and the reason behind that.
@@ -216,11 +217,12 @@ function sample() {
   var username = 'Arya Stark';
   if (true) {
     var username = 'John Snow';
-    console.log(username);
+    console.log(username); // john snow
   }
-  console.log(username, 'second');
+  console.log(username, 'second'); //John Snow second because username is defined in under if condition.
 }
-sample();
+sample(); 
+          
 ```
 
 20. Guess the output and the reason behind that.
@@ -230,9 +232,9 @@ function sample() {
   let username = 'Arya Stark';
   if (true) {
     let username = 'John Snow';
-    console.log(username, 'first');
+    console.log(username, 'first'); // John Snow first
   }
-  console.log(username, 'second');
+  console.log(username, 'second'); // Arya Stark second
 }
 sample();
 ```
@@ -248,6 +250,9 @@ function sample(...args) {
 }
 
 sample('First', 'Second', 'Third');
+//Hello I am First
+//Hello I am Second
+//Hello I am Third
 ```
 
 22. Guess the output and the reason behind that.
@@ -261,6 +266,9 @@ function sample(...args) {
 }
 
 sample('First', 'Second', 'Third');
+//Hello I am First
+//Hello I am Second
+//Hello I am Third
 ```
 
 23. Guess the output and the reason behind that.
@@ -274,6 +282,7 @@ if (true) {
   let username = 'Hello World!';
   myFunc();
 }
+//Cannot access 'username' before initialization.because the username defined after the function.
 ```
 
 24. Guess the output and the reason behind that.
@@ -290,6 +299,7 @@ function outer() {
 }
 
 outer();
+// I love this movie called MAD MAX: FURY ROAD
 ```
 
 25. Guess the output and the reason behind that.
@@ -307,6 +317,7 @@ function outer() {
 }
 
 outer();
+// I love this movie called BEFORE SUNRISE
 ```
 
 26. Guess the output and the reason behind that.
@@ -327,9 +338,10 @@ function outer() {
   inner();
 }
 outer();
+// I love this movie called GONE GIRL
 ```
 
-30. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
+27. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
 
 ```js
 const addOne = (num) => {
