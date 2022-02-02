@@ -6,7 +6,9 @@ The returned function accepts a sentence. If the sentence contains the `fromWord
 
 ```js
 function censor(fromWord, toWord) {
-  //  Your code goes here
+  return function(sentence) {
+    if(sentence )
+  }
 }
 
 let censorSentence = censor('World', 'Sam');
@@ -25,7 +27,9 @@ The returned function either accepts two parameter or one parameter.
 
 ```js
 function multipleCensor() {
-  //  Your code goes here
+  return function(arr1,arr2){
+     
+  }
 }
 
 let censorQuote = multipleCensor();
