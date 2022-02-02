@@ -112,10 +112,6 @@ var nextMessage = sayHello('Test');
 let userName;
 let number;
 
-let sayHello = function (name) {
-  return `Hello ${name}`;
-};
-
 let message;
 var nextMessage = undefined
 
@@ -124,6 +120,10 @@ var nextMessage = undefined
 console.log(username, numbers);
 userName = Arya;
 number = 21;
+
+let sayHello = function (name) {
+  return `Hello ${name}`;
+};
 
 message = sayHello(username);
 nextMessage = sayHello('Test');
@@ -157,9 +157,6 @@ var nextMessage = sayHello('Test');
 let username;
 let number;
 let message;
-let sayHello = function (name) {
-  return `Hello ${name}`;
-};
  var nextMessage = undefined;
 
  // Execution Phase
@@ -167,6 +164,9 @@ let sayHello = function (name) {
  console.log(username, number);
  number = 21
  message= sayHello(username)
+ let sayHello = function (name) {
+  return `Hello ${name}`;
+};
  nextMessage = sayHello('Test')
 
 
@@ -215,7 +215,7 @@ sayHi();
 ```js
 // Your code goes here
 // Declaration Phase
-sayHi = fn
+function sayHi(name) {
 var name = undefined;
 let age;
 
@@ -224,6 +224,7 @@ let age;
   console.log(age);
   name = 'Lydia'
   age = 21
+}
 
 ```
 
@@ -245,7 +246,7 @@ function sayHi(name) {
 // Your code goes here
 
 // Declaration Phase
-sayHi = fn;
+function sayHi(name) {
 var name = undefined;
 let age;
 
@@ -276,6 +277,7 @@ let sayHi = function sayHi(name) {
 
 // Declaration Phase
 
+
 // Execution Phase
 ```
 
@@ -294,8 +296,14 @@ let num2 = 30;
 // Your code goes here
 
 // Declaration Phase
-
+let num1;
+var sum = num1 + num2
+let num2;
 // Execution Phase
+num1 = 21;
+console.log(sum);
+sum = num1 + num2;
+num2 = 30;
 ```
 
 10.
@@ -322,8 +330,27 @@ let sum = add(num1, num2, 4, 5, 6);
 // Your code goes here
 
 // Declaration Phase
+var num1 = 21
+let sum2;
+let add;
+function addAgian(a, b) {
+  return a + b;
+}
+let num2;
+let sum;
+
 
 // Execution Phase
+num1 = 21;
+
+sum2 = addAgain(num1, num2, 4, 5, 6);
+
+add = (a, b, c, d, e) => {
+  return a + b + c + d + e;
+};
+
+num2 = 2
+sum = add(num1, num2, 4, 5, 6);
 ```
 
 11.
@@ -347,8 +374,20 @@ let add = (a, b) => {
 // Your code goes here
 
 // Declaration Phase
+function test(a) {
+  let num1 = 21;
+  return add(a, num1);
+}
+let sum;
+let add;
+
 
 // Execution Phase
+sum = test(100);
+
+add = (a, b) => {
+  return a + b;
+};
 ```
 
 12.
@@ -372,8 +411,16 @@ function add(a, b) {
 // Your code goes here
 
 // Declaration Phase
-
+function test(a) {
+  let num1 = 21;
+  return add(a, num1);
+}
+let sum ;
+function add(a, b) {
+  return a + b;
+}
 
 // Execution Phase
+sum = test(100);
 ```
 
