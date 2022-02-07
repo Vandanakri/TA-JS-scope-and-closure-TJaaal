@@ -2,7 +2,9 @@
 
 ```js
 function once(cb) {
-  // your code goes here
+  return function(){
+    alert ("You can only call me once!");
+  } 
 }
 
 // TEST
@@ -18,7 +20,7 @@ log(); // return undefinde (can't be called twice)
 
 ```js
 function once(cb) {
-  // your code goes here
+  
 }
 
 // TEST
@@ -59,3 +61,4 @@ logThreeTimes(); // log message "Hello Arya" (2)
 logThreeTimes(); // log message "Hello Arya" (3)
 log(); // return undefinde (can't be called)
 ```
+
